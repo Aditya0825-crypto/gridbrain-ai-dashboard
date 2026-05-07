@@ -254,6 +254,6 @@ This project is licensed under the MIT License.
 
 <div align="center">
 
-### ⚡ GridBrain AI — Building Smarter EV Grids with AI
+### ⚡ GridBrain AI — Building Smarter EV Grids with AI.
 
 </div>
