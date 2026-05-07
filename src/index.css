@@ -1,0 +1,190 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=DM+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* GridBrain AI — Electric Cyan + Indigo dark design system. All colors HSL. */
+
+@layer base {
+  :root {
+    /* Dark is the default */
+    --background: 230 45% 6%;
+    --foreground: 210 40% 96%;
+
+    --card: 230 40% 9%;
+    --card-foreground: 210 40% 96%;
+
+    --popover: 230 45% 8%;
+    --popover-foreground: 210 40% 96%;
+
+    --primary: 187 92% 48%;            /* electric cyan */
+    --primary-foreground: 230 45% 6%;
+    --primary-glow: 187 100% 62%;
+
+    --secondary: 244 75% 62%;          /* indigo */
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 230 30% 14%;
+    --muted-foreground: 215 20% 68%;
+
+    --accent: 264 80% 66%;             /* violet accent */
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 210 40% 98%;
+
+    --success: 152 76% 45%;
+    --success-foreground: 230 45% 6%;
+    --warning: 38 95% 56%;
+    --warning-foreground: 230 45% 6%;
+    --danger: 358 85% 60%;
+    --danger-foreground: 210 40% 98%;
+
+    --border: 230 30% 16%;
+    --input: 230 30% 14%;
+    --ring: 187 92% 48%;
+
+    --radius: 0.875rem;
+
+    /* Brand gradients & shadows */
+    --gradient-primary: linear-gradient(135deg, hsl(187 92% 48%) 0%, hsl(244 75% 62%) 100%);
+    --gradient-aurora: radial-gradient(60% 80% at 20% 10%, hsl(187 92% 48% / 0.25), transparent 60%),
+                       radial-gradient(50% 70% at 90% 20%, hsl(264 80% 66% / 0.22), transparent 60%),
+                       radial-gradient(60% 60% at 50% 100%, hsl(244 75% 62% / 0.18), transparent 60%);
+    --gradient-card: linear-gradient(135deg, hsl(230 40% 11% / 0.85), hsl(230 40% 8% / 0.6));
+    --gradient-text: linear-gradient(135deg, hsl(187 100% 70%), hsl(264 80% 75%));
+
+    --shadow-glow: 0 0 40px -10px hsl(187 92% 48% / 0.45);
+    --shadow-elevated: 0 20px 60px -20px hsl(230 80% 4% / 0.7), 0 0 0 1px hsl(230 30% 18% / 0.6);
+    --shadow-card: 0 8px 32px -8px hsl(230 80% 2% / 0.5);
+
+    /* Sidebar */
+    --sidebar-background: 230 50% 5%;
+    --sidebar-foreground: 215 20% 75%;
+    --sidebar-primary: 187 92% 48%;
+    --sidebar-primary-foreground: 230 45% 6%;
+    --sidebar-accent: 230 40% 11%;
+    --sidebar-accent-foreground: 210 40% 96%;
+    --sidebar-border: 230 30% 14%;
+    --sidebar-ring: 187 92% 48%;
+
+    --transition-smooth: cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .light {
+    --background: 210 40% 98%;
+    --foreground: 230 45% 8%;
+    --card: 0 0% 100%;
+    --card-foreground: 230 45% 8%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 230 45% 8%;
+    --primary: 187 92% 38%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 244 65% 55%;
+    --secondary-foreground: 0 0% 100%;
+    --muted: 220 20% 94%;
+    --muted-foreground: 230 15% 40%;
+    --accent: 264 70% 56%;
+    --accent-foreground: 0 0% 100%;
+    --border: 220 20% 88%;
+    --input: 220 20% 92%;
+    --ring: 187 92% 38%;
+    --gradient-card: linear-gradient(135deg, hsl(0 0% 100% / 0.9), hsl(220 30% 97% / 0.8));
+    --shadow-card: 0 8px 32px -8px hsl(230 30% 70% / 0.3);
+    --sidebar-background: 0 0% 100%;
+    --sidebar-foreground: 230 25% 30%;
+    --sidebar-accent: 220 30% 96%;
+    --sidebar-accent-foreground: 230 45% 8%;
+    --sidebar-border: 220 20% 90%;
+  }
+}
+
+@layer base {
+  * { @apply border-border; }
+  html { font-family: 'DM Sans', system-ui, sans-serif; }
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-feature-settings: "ss01", "cv11";
+  }
+  h1, h2, h3, h4, h5 { font-family: 'Space Grotesk', sans-serif; letter-spacing: -0.02em; }
+  .font-mono { font-family: 'JetBrains Mono', monospace; }
+
+  /* Scrollbar */
+  ::-webkit-scrollbar { width: 8px; height: 8px; }
+  ::-webkit-scrollbar-track { background: hsl(var(--background)); }
+  ::-webkit-scrollbar-thumb { background: hsl(var(--muted)); border-radius: 8px; }
+  ::-webkit-scrollbar-thumb:hover { background: hsl(var(--primary) / 0.5); }
+}
+
+@layer components {
+  .glass {
+    background: var(--gradient-card);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid hsl(var(--border));
+    box-shadow: var(--shadow-card);
+  }
+  .glass-strong {
+    background: hsl(var(--card) / 0.7);
+    backdrop-filter: blur(20px);
+    border: 1px solid hsl(var(--border));
+  }
+  .text-gradient {
+    background: var(--gradient-text);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+  .bg-aurora { background-image: var(--gradient-aurora); }
+  .bg-grid {
+    background-image:
+      linear-gradient(hsl(var(--border) / 0.4) 1px, transparent 1px),
+      linear-gradient(90deg, hsl(var(--border) / 0.4) 1px, transparent 1px);
+    background-size: 40px 40px;
+  }
+  .glow-primary { box-shadow: var(--shadow-glow); }
+  .ring-pulse::after {
+    content: ''; position: absolute; inset: 0; border-radius: inherit;
+    box-shadow: 0 0 0 0 hsl(var(--primary) / 0.6);
+    animation: pulse-ring 2s ease-out infinite;
+  }
+}
+
+@layer utilities {
+  .animate-shimmer {
+    background: linear-gradient(90deg, transparent, hsl(var(--primary) / 0.15), transparent);
+    background-size: 200% 100%;
+    animation: shimmer 2.5s linear infinite;
+  }
+}
+
+@keyframes pulse-ring {
+  0% { box-shadow: 0 0 0 0 hsl(var(--primary) / 0.55); }
+  100% { box-shadow: 0 0 0 14px hsl(var(--primary) / 0); }
+}
+@keyframes shimmer {
+  0% { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+
+/* Leaflet container theming */
+.leaflet-container { background: hsl(var(--background)) !important; font-family: inherit; }
+.leaflet-tile { filter: contrast(1.05) saturate(0.85); }
+.leaflet-control-attribution { display: none !important; }
+
+/* Leaflet popup theming */
+.leaflet-popup-content-wrapper {
+  background: hsl(var(--popover)) !important;
+  color: hsl(var(--foreground)) !important;
+  border: 1px solid hsl(var(--border)) !important;
+  border-radius: 12px !important;
+  box-shadow: 0 8px 32px hsl(0 0% 0% / 0.4) !important;
+}
+.leaflet-popup-content { margin: 10px 12px !important; font-family: inherit !important; }
+.leaflet-popup-tip { background: hsl(var(--popover)) !important; border: 1px solid hsl(var(--border)) !important; }
+.leaflet-control-zoom a {
+  background: hsl(var(--card)) !important;
+  color: hsl(var(--foreground)) !important;
+  border-color: hsl(var(--border)) !important;
+}
