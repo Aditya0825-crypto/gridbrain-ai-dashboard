@@ -130,16 +130,23 @@ export default function Simulation() {
               <span className="font-mono text-xs text-accent">{chargersDelta > 0 ? `+${chargersDelta}` : chargersDelta} chargers</span>
             </div>
             <div className="flex items-center gap-2">
-              <Button variant="outline" size="icon" onClick={() => setChargersDelta((c) => c - 1)} className="glass border-border">
+              <Button type="button" variant="outline" size="icon" onClick={() => setChargersDelta((c) => Math.max(-50, c - 1))} className="glass border-border shrink-0 hover:bg-primary/10 hover:text-primary active:scale-95 transition">
                 <Minus className="w-4 h-4" />
               </Button>
-              <div className="flex-1 h-10 glass rounded-md flex items-center justify-center font-mono text-lg">
-                {chargersDelta > 0 ? `+${chargersDelta}` : chargersDelta}
-              </div>
-              <Button variant="outline" size="icon" onClick={() => setChargersDelta((c) => c + 1)} className="glass border-border">
+              <input
+                type="number"
+                value={chargersDelta}
+                onChange={(e) => {
+                  const v = parseInt(e.target.value);
+                  setChargersDelta(isNaN(v) ? 0 : Math.max(-50, Math.min(50, v)));
+                }}
+                className="flex-1 h-10 glass rounded-md text-center font-mono text-lg bg-transparent border border-border outline-none focus:ring-2 focus:ring-primary/40 [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none"
+              />
+              <Button type="button" variant="outline" size="icon" onClick={() => setChargersDelta((c) => Math.min(50, c + 1))} className="glass border-border shrink-0 hover:bg-primary/10 hover:text-primary active:scale-95 transition">
                 <Plus className="w-4 h-4" />
               </Button>
             </div>
+            <p className="mt-1.5 text-[10px] font-mono text-muted-foreground uppercase">Add or remove chargers (−50 to +50)</p>
           </div>
 
           {/* output stats */}
