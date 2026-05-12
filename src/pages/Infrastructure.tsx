@@ -8,6 +8,7 @@ import { zones, chargingStations, riskColor, type Zone, type ChargingStation } f
 import { Plug, Sparkles, TrendingUp, MapPin, Zap, ChevronRight, X, Battery, Users, Clock, Gauge } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
+import { toast } from "sonner";
 
 function ResizeFix() {
   const map = useMap();
@@ -322,9 +323,30 @@ export default function Infrastructure() {
                     <p className="text-sm leading-relaxed">
                       Deploy <span className="text-primary font-semibold">{Math.ceil(selectedZone.load / 4)}</span> additional DC Fast chargers in {selectedZone.name}. Estimated wait time reduction: <span className="text-success font-semibold">~38%</span>.
                     </p>
-                    <Button className="w-full mt-3 bg-gradient-primary text-primary-foreground hover:opacity-90">
-                      Approve Deployment
-                    </Button>
+                    <div className="grid grid-cols-2 gap-2 mt-3">
+                      <Button
+                        className="bg-gradient-primary text-primary-foreground hover:opacity-90"
+                        onClick={() => {
+                          const n = Math.ceil(selectedZone.load / 4);
+                          toast.success(`Deployment approved`, {
+                            description: `${n} DC Fast chargers queued for ${selectedZone.name}. Work order #WO-${Math.floor(Math.random() * 9000 + 1000)} dispatched to BESCOM field ops.`,
+                          });
+                        }}
+                      >
+                        Approve Deployment
+                      </Button>
+                      <Button
+                        variant="outline"
+                        className="glass border-border"
+                        onClick={() => {
+                          toast.info("Added to plan", {
+                            description: `${selectedZone.name} added to Q3 capex review. Estimated cost: ₹${(Math.ceil(selectedZone.load / 4) * 8.5).toFixed(1)}L.`,
+                          });
+                        }}
+                      >
+                        Add to Plan
+                      </Button>
+                    </div>
                   </div>
                 </div>
               )}
