@@ -1,7 +1,7 @@
 import { NavLink, useLocation } from "react-router-dom";
 import {
   LayoutDashboard, BarChart3, ShieldAlert, MapPinned, FlaskConical, Settings, Zap,
-  Brain, FileText, ScrollText, Landmark, Users, BookOpen,
+  Brain, FileText, ScrollText, Users, BookOpen,
 } from "lucide-react";
 import {
   Sidebar, SidebarContent, SidebarGroup, SidebarGroupContent, SidebarGroupLabel,
@@ -39,7 +39,7 @@ const sections: { label: string; items: NavItem[] }[] = [
     items: [
       { title: "Reports", url: "/reports", icon: FileText },
       { title: "Audit Log", url: "/audit", icon: ScrollText },
-      { title: "Government", url: "/government", icon: Landmark },
+      
     ],
   },
   {

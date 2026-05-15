@@ -13,7 +13,7 @@ import Settings from "./pages/Settings";
 import ExplainableAI from "./pages/ExplainableAI";
 import Reports from "./pages/Reports";
 import Audit from "./pages/Audit";
-import Government from "./pages/Government";
+
 import Users from "./pages/Users";
 import Documentation from "./pages/Documentation";
 import NotFound from "./pages/NotFound.tsx";
@@ -38,7 +38,7 @@ const App = () => (
               <Route path="/explainable-ai" element={<ExplainableAI />} />
               <Route path="/reports" element={<Reports />} />
               <Route path="/audit" element={<Audit />} />
-              <Route path="/government" element={<Government />} />
+              
               <Route path="/users" element={<Users />} />
               <Route path="/docs" element={<Documentation />} />
               <Route path="/settings" element={<Settings />} />
