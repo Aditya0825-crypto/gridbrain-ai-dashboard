@@ -119,7 +119,7 @@ export default function Risk() {
         </div>
       </motion.div>
 
-      {/* ── Zone Risk Table with EV Mitra ──────────────────────────────── */}
+      {/* ── Zone Risk Table with EV Mithra ──────────────────────────────── */}
       <motion.div initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} className="glass rounded-2xl p-5">
         <div className="flex flex-wrap items-center justify-between gap-3 mb-4">
           <div>
