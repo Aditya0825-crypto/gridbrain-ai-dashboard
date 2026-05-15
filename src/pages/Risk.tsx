@@ -43,7 +43,7 @@ export default function Risk() {
       <PageHeader
         eyebrow="Risk Intelligence"
         title="Risk Heatmap & Zone Status"
-        description="Identify overload risks, detect synchronization congestion, and manage EV Mitra notifications across all monitored zones."
+        description="Identify overload risks, detect synchronization congestion, and manage EV Mithra notifications across all monitored zones."
       />
 
       <div className="grid grid-cols-1 xl:grid-cols-3 gap-4 mb-6">
