@@ -264,7 +264,7 @@ export default function Risk() {
                       <Bell className="w-5 h-5 text-primary-foreground" />
                     </div>
                     <div>
-                      <h3 className="font-display font-semibold">EV Mitra Notification Sent</h3>
+                      <h3 className="font-display font-semibold">EV Mithra Notification Sent</h3>
                       <p className="text-[10px] font-mono text-success flex items-center gap-1.5">
                         <span className="w-1.5 h-1.5 rounded-full bg-success animate-glow-pulse" /> DELIVERED
                       </p>
