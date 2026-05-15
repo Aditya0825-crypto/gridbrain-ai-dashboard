@@ -43,7 +43,7 @@ export default function Risk() {
       <PageHeader
         eyebrow="Risk Intelligence"
         title="Risk Heatmap & Zone Status"
-        description="Identify overload risks, detect synchronization congestion, and manage EV Mitra notifications across all monitored zones."
+        description="Identify overload risks, detect synchronization congestion, and manage EV Mithra notifications across all monitored zones."
       />
 
       <div className="grid grid-cols-1 xl:grid-cols-3 gap-4 mb-6">
@@ -119,7 +119,7 @@ export default function Risk() {
         </div>
       </motion.div>
 
-      {/* ── Zone Risk Table with EV Mitra ──────────────────────────────── */}
+      {/* ── Zone Risk Table with EV Mithra ──────────────────────────────── */}
       <motion.div initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} className="glass rounded-2xl p-5">
         <div className="flex flex-wrap items-center justify-between gap-3 mb-4">
           <div>
@@ -158,7 +158,7 @@ export default function Risk() {
                 <th className="py-3 px-3 font-medium">Peak Time</th>
                 <th className="py-3 px-3 font-medium">Load / Cap</th>
                 <th className="py-3 px-3 font-medium">Action</th>
-                <th className="py-3 px-3 font-medium">EV Mitra</th>
+                <th className="py-3 px-3 font-medium">EV Mithra</th>
               </tr>
             </thead>
             <tbody>
@@ -217,8 +217,8 @@ export default function Risk() {
                               <CheckCircle2 className="w-3 h-3" /> Notified
                             </>
                           ) : (
-                            <>
-                              <Bell className="w-3 h-3" /> Notify via EV Mitra
+                          <>
+                            <Bell className="w-3 h-3" /> Notify via EV Mithra
                             </>
                           )}
                           {!isSent && !isAnimating && (
@@ -237,7 +237,7 @@ export default function Risk() {
         </div>
       </motion.div>
 
-      {/* ── EV Mitra Notification Modal ────────────────────────────────── */}
+      {/* ── EV Mithra Notification Modal ────────────────────────────────── */}
       <AnimatePresence>
         {evMitraZone && notifSent[evMitraZone] && (
           <motion.div
@@ -264,7 +264,7 @@ export default function Risk() {
                       <Bell className="w-5 h-5 text-primary-foreground" />
                     </div>
                     <div>
-                      <h3 className="font-display font-semibold">EV Mitra Notification Sent</h3>
+                      <h3 className="font-display font-semibold">EV Mithra Notification Sent</h3>
                       <p className="text-[10px] font-mono text-success flex items-center gap-1.5">
                         <span className="w-1.5 h-1.5 rounded-full bg-success animate-glow-pulse" /> DELIVERED
                       </p>
