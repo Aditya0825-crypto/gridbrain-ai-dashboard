@@ -158,7 +158,7 @@ export default function Risk() {
                 <th className="py-3 px-3 font-medium">Peak Time</th>
                 <th className="py-3 px-3 font-medium">Load / Cap</th>
                 <th className="py-3 px-3 font-medium">Action</th>
-                <th className="py-3 px-3 font-medium">EV Mitra</th>
+                <th className="py-3 px-3 font-medium">EV Mithra</th>
               </tr>
             </thead>
             <tbody>
