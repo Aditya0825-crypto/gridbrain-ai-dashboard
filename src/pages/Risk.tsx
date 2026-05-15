@@ -217,8 +217,8 @@ export default function Risk() {
                               <CheckCircle2 className="w-3 h-3" /> Notified
                             </>
                           ) : (
-                            <>
-                              <Bell className="w-3 h-3" /> Notify via EV Mitra
+                          <>
+                            <Bell className="w-3 h-3" /> Notify via EV Mithra
                             </>
                           )}
                           {!isSent && !isAnimating && (
