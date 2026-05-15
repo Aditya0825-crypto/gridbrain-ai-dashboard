@@ -237,7 +237,7 @@ export default function Risk() {
         </div>
       </motion.div>
 
-      {/* ── EV Mitra Notification Modal ────────────────────────────────── */}
+      {/* ── EV Mithra Notification Modal ────────────────────────────────── */}
       <AnimatePresence>
         {evMitraZone && notifSent[evMitraZone] && (
           <motion.div
